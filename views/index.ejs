@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>聊天室</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>简单聊天室</h1>
+    <ul id="messages"></ul>
+    <form>
+    	<input type="text" name="text" id="text"/>
+    	<input type="submit" value="发送" id="send" />
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		var socket = io();
+		$(function () {
+			var socket = io();
+			$('form').submit(function(){
+				socket.emit('chat message', $('#text').val());
+				$('#text').val('');
+				return false;
+			});
+			socket.on('chat message', function(data){
+		      $('#messages').append('<li>'+data.user + ':' + data.msg+'</li>');
+		    });
+		});
+	</script>
+  </body>
+</html>

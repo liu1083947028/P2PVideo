@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-height: 660px;
+  min-width: 600px;
+  width: 100vw;
+  height: 100vh;	
+  position: relative;
+}
+
+a {
+  color: #00B7FF;
+}
+h1{
+	text-align: center;
+}
+
+form{
+	position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#text{
+	width: 80%;
+    height: 50px;
+    font-size: 20px;
+}
+#send{
+    background-color: rgb(0, 188, 212);
+    width: 100px;
+    height: 54px;
+    border: 0;
+    cursor: pointer;
+}
+#messages{
+	list-style: none;
+}
